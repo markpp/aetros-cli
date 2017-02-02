@@ -50,7 +50,7 @@ def upscale(image, ratio):
     channels = image.shape[2]
     out = np.ndarray((height, width, channels), dtype=np.uint8)
     for x, y in np.ndindex((width, height)):
-        out[y, x] = image[math.floor(y / ratio), math.floor(x / ratio)]
+        out[y, x] = image[int(y / ratio), int(x / ratio)]
     return out
 
 
